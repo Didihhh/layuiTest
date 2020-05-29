@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.atguigu.crowd.mapper.RoleMapper" >
-  <resultMap id="BaseResultMap" type="com.atguigu.crowd.entity.Role" >
+<mapper namespace="com.aaa.dao.RoleMapper" >
+  <resultMap id="BaseResultMap" type="com.aaa.entity.Role" >
     <id column="role_id" property="roleId" jdbcType="INTEGER" />
     <result column="role_name" property="roleName" jdbcType="VARCHAR" />
     <result column="role_key" property="roleKey" jdbcType="VARCHAR" />
@@ -76,7 +76,7 @@
     role_id, role_name, role_key, role_sort, status, del_flag, create_by, create_time, 
     update_by, update_time, remark
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.atguigu.crowd.entity.RoleExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.aaa.entity.RoleExample" >
     select
     <if test="distinct" >
       distinct
@@ -100,13 +100,13 @@
     delete from tbl_role
     where role_id = #{roleId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.crowd.entity.RoleExample" >
+  <delete id="deleteByExample" parameterType="com.aaa.entity.RoleExample" >
     delete from tbl_role
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.atguigu.crowd.entity.Role" >
+  <insert id="insert" parameterType="com.aaa.entity.Role" >
     insert into tbl_role (role_id, role_name, role_key, 
       role_sort, status, del_flag, 
       create_by, create_time, update_by, 
@@ -116,7 +116,7 @@
       #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.atguigu.crowd.entity.Role" >
+  <insert id="insertSelective" parameterType="com.aaa.entity.Role" >
     insert into tbl_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="roleId != null" >
@@ -189,7 +189,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.crowd.entity.RoleExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.aaa.entity.RoleExample" resultType="java.lang.Integer" >
     select count(*) from tbl_role
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -253,7 +253,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.crowd.entity.Role" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.aaa.entity.Role" >
     update tbl_role
     <set >
       <if test="roleName != null" >
@@ -289,7 +289,7 @@
     </set>
     where role_id = #{roleId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.atguigu.crowd.entity.Role" >
+  <update id="updateByPrimaryKey" parameterType="com.aaa.entity.Role" >
     update tbl_role
     set role_name = #{roleName,jdbcType=VARCHAR},
       role_key = #{roleKey,jdbcType=VARCHAR},

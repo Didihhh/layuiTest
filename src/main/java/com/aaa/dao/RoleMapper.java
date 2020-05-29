@@ -1,12 +1,16 @@
-package com.aaa.biz;
-
-import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
+package com.aaa.dao;
 
 import com.aaa.entity.Role;
+import com.aaa.entity.RoleExample;
+import java.util.List;
 
-public interface RoleBiz {
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+@Mapper
+@Repository
+public interface RoleMapper {
     int countByExample(RoleExample example);
 
     int deleteByExample(RoleExample example);

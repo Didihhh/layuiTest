@@ -1,32 +1,15 @@
 package com.aaa.biz;
 
-
-import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
-
 import com.aaa.entity.Dept;
+import com.aaa.entity.MyUserInfo;
+import com.github.pagehelper.PageInfo;
 
-public interface DeptBiz {
-    int countByExample(DeptExample example);
+public  interface  DeptBiz {
+	PageInfo<Dept> showDeptInfo(int page, int limit,int status,String deptName);
 
-    int deleteByExample(DeptExample example);
+	void addDept(Dept dept);
 
-    int deleteByPrimaryKey(Integer deptId);
+	void deleteDept(Integer deptID);
 
-    int insert(Dept record);
-
-    int insertSelective(Dept record);
-
-    List<Dept> selectByExample(DeptExample example);
-
-    Dept selectByPrimaryKey(Integer deptId);
-
-    int updateByExampleSelective(@Param("record") Dept record, @Param("example") DeptExample example);
-
-    int updateByExample(@Param("record") Dept record, @Param("example") DeptExample example);
-
-    int updateByPrimaryKeySelective(Dept record);
-
-    int updateByPrimaryKey(Dept record);
+	void updateDept(Dept dept);
 }
