@@ -42,7 +42,7 @@ public class DeptController {
 	}
 	
 	@RequestMapping("/delete/dept")
-	public ResultEntity<Dept> deleteDept(Integer deptID)
+	public ResultEntity<Dept> deleteDept(@RequestParam(value="deptId")Integer deptID)
 	{
 		deptBiz.deleteDept(deptID);
 		return ResultEntity.successWithoutData();
