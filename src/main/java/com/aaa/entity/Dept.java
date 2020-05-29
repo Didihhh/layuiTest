@@ -29,7 +29,6 @@ public class Dept {
         this.deptId = deptId;
     }
 
-    
     public String getDeptName() {
         return deptName;
     }
