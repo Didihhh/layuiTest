@@ -21,6 +21,7 @@ public interface DeptMapper {
 
     int insert(Dept record);
 
+    
     int insertSelective(Dept record);
 
     List<Dept> selectByExample(DeptExample example);
